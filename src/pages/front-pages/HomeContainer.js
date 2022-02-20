@@ -1,11 +1,11 @@
 import React from 'react';
 
-const LoginContainer = () => {
+const HomeContainer = () => {
     return (
         <div>
-            Login
+            Home
         </div>
     );
 };
 
-export default LoginContainer;
+export default HomeContainer;
