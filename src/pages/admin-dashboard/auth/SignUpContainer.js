@@ -16,7 +16,7 @@ const SignUpContainer = () => {
                                         <h3 className="block-title">Sign Up</h3>
                                         <div className="block-options">
                                             <Link className="btn-block-option" to="/login" data-place="left" data-tip="Login">
-                                                <i className="fa fa-user-plus"></i>
+                                                <i className="fa fa-user"></i>
                                             </Link>
                                         </div>
                                     </div>
