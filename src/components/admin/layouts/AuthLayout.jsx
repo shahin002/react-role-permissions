@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactTooltip from 'react-tooltip';
 import "./assets/Admin.css";
 
 const AuthLayout = ({children}) => {
@@ -9,6 +10,8 @@ const AuthLayout = ({children}) => {
                     {children}
                 </main>
             </div>
+
+            <ReactTooltip effect='solid' />
         </>
     );
 };

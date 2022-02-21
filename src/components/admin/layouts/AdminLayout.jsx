@@ -3,6 +3,7 @@ import "./assets/Admin.css";
 import Header from "./includes/Header";
 import Sidebar from "./includes/Sidebar";
 import Footer from "./includes/Footer";
+import ReactTooltip from 'react-tooltip';
 
 const AdminLayout = ({children}) => {
     return (
@@ -18,6 +19,7 @@ const AdminLayout = ({children}) => {
                 </main>
 
                 <Footer/>
+                <ReactTooltip effect='solid' />
             </div>
         </>
     );

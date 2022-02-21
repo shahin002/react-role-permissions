@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AdminLayout from "../../../components/layouts/AdminLayout";
+import AdminLayout from "../../../components/admin/layouts/AdminLayout";
 
 const DashboardContainer = () => {
     return (
