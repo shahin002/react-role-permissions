@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import AdminLayout from "../../../components/layouts/AdminLayout";
 
 const DashboardContainer = () => {
@@ -16,7 +17,7 @@ const DashboardContainer = () => {
                                 <li className="breadcrumb-item">Layout</li>
                                 <li className="breadcrumb-item">Page</li>
                                 <li className="breadcrumb-item" aria-current="page">
-                                    <a className="link-fx" href="">Default</a>
+                                    <Link className="link-fx" to="#">Default</Link>
                                 </li>
                             </ol>
                         </nav>

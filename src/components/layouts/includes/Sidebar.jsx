@@ -1,234 +1,235 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
     return (
         <>
             <nav id="sidebar" aria-label="Main Navigation">
                 <div className="content-header bg-white-5">
-                    <a className="font-w600 text-dual" href="index.html">
+                    <Link className="font-w600 text-dual" to="index.html">
                         <i className="fa fa-circle-notch text-primary"></i>
                         <span className="smini-hide">
                             <span className="font-w700 font-size-h5">ne</span> <span className="font-w400">4.5</span>
                         </span>
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="content-side content-side-full">
                     <ul className="nav-main">
                         <li className="nav-main-item">
-                            <a className="nav-main-link" href="be_pages_dashboard.html">
+                            <Link className="nav-main-link" to="be_pages_dashboard.html">
                                 <i className="nav-main-link-icon si si-speedometer"></i>
                                 <span className="nav-main-link-name">Dashboard</span>
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-main-item">
-                            <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                aria-haspopup="true" aria-expanded="false" to="#!">
                                 <i className="nav-main-link-icon si si-layers"></i>
                                 <span className="nav-main-link-name">Page Packs</span>
-                            </a>
+                            </Link>
                             <ul className="nav-main-submenu">
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                        aria-haspopup="true" aria-expanded="false" to="#">
                                         <i className="nav-main-link-icon si si-bag"></i>
                                         <span className="nav-main-link-name">e-Commerce</span>
-                                    </a>
+                                    </Link>
                                     <ul className="nav-main-submenu">
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_ecom_dashboard.html">
+                                            <Link className="nav-main-link" to="be_pages_ecom_dashboard.html">
                                                 <span className="nav-main-link-name">Dashboard</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_ecom_orders.html">
+                                            <Link className="nav-main-link" to="be_pages_ecom_orders.html">
                                                 <span className="nav-main-link-name">Orders</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_ecom_order.html">
+                                            <Link className="nav-main-link" to="be_pages_ecom_order.html">
                                                 <span className="nav-main-link-name">Order</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_ecom_products.html">
+                                            <Link className="nav-main-link" to="be_pages_ecom_products.html">
                                                 <span className="nav-main-link-name">Products</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_ecom_product_edit.html">
+                                            <Link className="nav-main-link" to="be_pages_ecom_product_edit.html">
                                                 <span className="nav-main-link-name">Product Edit</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_ecom_customer.html">
+                                            <Link className="nav-main-link" to="be_pages_ecom_customer.html">
                                                 <span className="nav-main-link-name">Customer</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                        aria-haspopup="true" aria-expanded="false" to="#">
                                         <i className="nav-main-link-icon si si-handbag"></i>
                                         <span className="nav-main-link-name">e-Commerce Store</span>
-                                    </a>
+                                    </Link>
                                     <ul className="nav-main-submenu">
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_ecom_store_home.html">
+                                            <Link className="nav-main-link" to="be_pages_ecom_store_home.html">
                                                 <span className="nav-main-link-name">Home</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_ecom_store_search.html">
+                                            <Link className="nav-main-link" to="be_pages_ecom_store_search.html">
                                                 <span className="nav-main-link-name">Search Results</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_ecom_store_products.html">
+                                            <Link className="nav-main-link" to="be_pages_ecom_store_products.html">
                                                 <span className="nav-main-link-name">Products List</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_ecom_store_product.html">
+                                            <Link className="nav-main-link" to="be_pages_ecom_store_product.html">
                                                 <span className="nav-main-link-name">Product Page</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_ecom_store_checkout.html">
+                                            <Link className="nav-main-link" to="be_pages_ecom_store_checkout.html">
                                                 <span className="nav-main-link-name">Checkout</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                        aria-haspopup="true" aria-expanded="false" to="#">
                                         <i className="nav-main-link-icon si si-pencil"></i>
                                         <span className="nav-main-link-name">Blog</span>
-                                    </a>
+                                    </Link>
                                     <ul className="nav-main-submenu">
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_blog_classic.html">
+                                            <Link className="nav-main-link" to="be_pages_blog_classic.html">
                                                 <span className="nav-main-link-name">Classic</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_blog_list.html">
+                                            <Link className="nav-main-link" to="be_pages_blog_list.html">
                                                 <span className="nav-main-link-name">List</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_blog_grid.html">
+                                            <Link className="nav-main-link" to="be_pages_blog_grid.html">
                                                 <span className="nav-main-link-name">Grid</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_blog_story.html">
+                                            <Link className="nav-main-link" to="be_pages_blog_story.html">
                                                 <span className="nav-main-link-name">Story</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_blog_story_cover.html">
+                                            <Link className="nav-main-link" to="be_pages_blog_story_cover.html">
                                                 <span className="nav-main-link-name">Story Cover</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                        aria-haspopup="true" aria-expanded="false" to="#">
                                         <i className="nav-main-link-icon si si-graduation"></i>
                                         <span className="nav-main-link-name">e-Learning</span>
-                                    </a>
+                                    </Link>
                                     <ul className="nav-main-submenu">
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_elearning_courses.html">
+                                            <Link className="nav-main-link" to="be_pages_elearning_courses.html">
                                                 <span className="nav-main-link-name">Courses</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_elearning_course.html">
+                                            <Link className="nav-main-link" to="be_pages_elearning_course.html">
                                                 <span className="nav-main-link-name">Course</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_elearning_lesson.html">
+                                            <Link className="nav-main-link" to="be_pages_elearning_lesson.html">
                                                 <span className="nav-main-link-name">Lesson</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                        aria-haspopup="true" aria-expanded="false" to="#">
                                         <i className="nav-main-link-icon si si-bubbles"></i>
                                         <span className="nav-main-link-name">Forum</span>
-                                    </a>
+                                    </Link>
                                     <ul className="nav-main-submenu">
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_forum_categories.html">
+                                            <Link className="nav-main-link" to="be_pages_forum_categories.html">
                                                 <span className="nav-main-link-name">Categories</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_forum_topics.html">
+                                            <Link className="nav-main-link" to="be_pages_forum_topics.html">
                                                 <span className="nav-main-link-name">Topics</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_pages_forum_discussion.html">
+                                            <Link className="nav-main-link" to="be_pages_forum_discussion.html">
                                                 <span className="nav-main-link-name">Discussion</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                        aria-haspopup="true" aria-expanded="false" to="#">
                                         <i className="nav-main-link-icon si si-magnet"></i>
                                         <span className="nav-main-link-name">Boxed Backend</span>
-                                    </a>
+                                    </Link>
                                     <ul className="nav-main-submenu">
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="bd_dashboard.html">
+                                            <Link className="nav-main-link" to="bd_dashboard.html">
                                                 <span className="nav-main-link-name">Dashboard</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="bd_search.html">
+                                            <Link className="nav-main-link" to="bd_search.html">
                                                 <span className="nav-main-link-name">Search</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="bd_simple_1.html">
+                                            <Link className="nav-main-link" to="bd_simple_1.html">
                                                 <span className="nav-main-link-name">Simple 1</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="bd_simple_2.html">
+                                            <Link className="nav-main-link" to="bd_simple_2.html">
                                                 <span className="nav-main-link-name">Simple 2</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="bd_image_1.html">
+                                            <Link className="nav-main-link" to="bd_image_1.html">
                                                 <span className="nav-main-link-name">Image 1</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="bd_image_2.html">
+                                            <Link className="nav-main-link" to="bd_image_2.html">
                                                 <span className="nav-main-link-name">Image 2</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="bd_video_1.html">
+                                            <Link className="nav-main-link" to="bd_video_1.html">
                                                 <span className="nav-main-link-name">Video 1</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="bd_video_2.html">
+                                            <Link className="nav-main-link" to="bd_video_2.html">
                                                 <span className="nav-main-link-name">Video 2</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </li>
@@ -236,548 +237,548 @@ const Sidebar = () => {
                         </li>
                         <li className="nav-main-heading">User Interface</li>
                         <li className="nav-main-item">
-                            <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                aria-haspopup="true" aria-expanded="false" to="#">
                                 <i className="nav-main-link-icon si si-energy"></i>
                                 <span className="nav-main-link-name">Blocks</span>
-                            </a>
+                            </Link>
                             <ul className="nav-main-submenu">
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_blocks_styles.html">
+                                    <Link className="nav-main-link" to="be_blocks_styles.html">
                                         <span className="nav-main-link-name">Styles</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_blocks_options.html">
+                                    <Link className="nav-main-link" to="be_blocks_options.html">
                                         <span className="nav-main-link-name">Options</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_blocks_forms.html">
+                                    <Link className="nav-main-link" to="be_blocks_forms.html">
                                         <span className="nav-main-link-name">Forms</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_blocks_themed.html">
+                                    <Link className="nav-main-link" to="be_blocks_themed.html">
                                         <span className="nav-main-link-name">Themed</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_blocks_api.html">
+                                    <Link className="nav-main-link" to="be_blocks_api.html">
                                         <span className="nav-main-link-name">API</span>
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </li>
                         <li className="nav-main-item">
-                            <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                aria-haspopup="true" aria-expanded="false" to="#">
                                 <i className="nav-main-link-icon si si-badge"></i>
                                 <span className="nav-main-link-name">Elements</span>
-                            </a>
+                            </Link>
                             <ul className="nav-main-submenu">
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_ui_grid.html">
+                                    <Link className="nav-main-link" to="be_ui_grid.html">
                                         <span className="nav-main-link-name">Grid</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_ui_typography.html">
+                                    <Link className="nav-main-link" to="be_ui_typography.html">
                                         <span className="nav-main-link-name">Typography</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_ui_icons.html">
+                                    <Link className="nav-main-link" to="be_ui_icons.html">
                                         <span className="nav-main-link-name">Icons</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_ui_buttons.html">
+                                    <Link className="nav-main-link" to="be_ui_buttons.html">
                                         <span className="nav-main-link-name">Buttons</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_ui_buttons_groups.html">
+                                    <Link className="nav-main-link" to="be_ui_buttons_groups.html">
                                         <span className="nav-main-link-name">Button Groups</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_ui_dropdowns.html">
+                                    <Link className="nav-main-link" to="be_ui_dropdowns.html">
                                         <span className="nav-main-link-name">Dropdowns</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_ui_tabs.html">
+                                    <Link className="nav-main-link" to="be_ui_tabs.html">
                                         <span className="nav-main-link-name">Tabs</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_ui_navigation.html">
+                                    <Link className="nav-main-link" to="be_ui_navigation.html">
                                         <span className="nav-main-link-name">Navigation</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_ui_navigation_horizontal.html">
+                                    <Link className="nav-main-link" to="be_ui_navigation_horizontal.html">
                                         <span className="nav-main-link-name">Horizontal Navigation</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_ui_progress.html">
+                                    <Link className="nav-main-link" to="be_ui_progress.html">
                                         <span className="nav-main-link-name">Progress</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_ui_alerts.html">
+                                    <Link className="nav-main-link" to="be_ui_alerts.html">
                                         <span className="nav-main-link-name">Alerts</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_ui_tooltips.html">
+                                    <Link className="nav-main-link" to="be_ui_tooltips.html">
                                         <span className="nav-main-link-name">Tooltips</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_ui_popovers.html">
+                                    <Link className="nav-main-link" to="be_ui_popovers.html">
                                         <span className="nav-main-link-name">Popovers</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_ui_modals.html">
+                                    <Link className="nav-main-link" to="be_ui_modals.html">
                                         <span className="nav-main-link-name">Modals</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_ui_images.html">
+                                    <Link className="nav-main-link" to="be_ui_images.html">
                                         <span className="nav-main-link-name">Images Overlay</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_ui_timeline.html">
+                                    <Link className="nav-main-link" to="be_ui_timeline.html">
                                         <span className="nav-main-link-name">Timeline</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_ui_ribbons.html">
+                                    <Link className="nav-main-link" to="be_ui_ribbons.html">
                                         <span className="nav-main-link-name">Ribbons</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_ui_animations.html">
+                                    <Link className="nav-main-link" to="be_ui_animations.html">
                                         <span className="nav-main-link-name">Animations</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_ui_color_themes.html">
+                                    <Link className="nav-main-link" to="be_ui_color_themes.html">
                                         <span className="nav-main-link-name">Color Themes</span>
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </li>
                         <li className="nav-main-item">
-                            <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                aria-haspopup="true" aria-expanded="false" to="#">
                                 <i className="nav-main-link-icon si si-grid"></i>
                                 <span className="nav-main-link-name">Tables</span>
-                            </a>
+                            </Link>
                             <ul className="nav-main-submenu">
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_tables_styles.html">
+                                    <Link className="nav-main-link" to="be_tables_styles.html">
                                         <span className="nav-main-link-name">Styles</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_tables_responsive.html">
+                                    <Link className="nav-main-link" to="be_tables_responsive.html">
                                         <span className="nav-main-link-name">Responsive</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_tables_helpers.html">
+                                    <Link className="nav-main-link" to="be_tables_helpers.html">
                                         <span className="nav-main-link-name">Helpers</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_tables_pricing.html">
+                                    <Link className="nav-main-link" to="be_tables_pricing.html">
                                         <span className="nav-main-link-name">Pricing</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_tables_datatables.html">
+                                    <Link className="nav-main-link" to="be_tables_datatables.html">
                                         <span className="nav-main-link-name">DataTables</span>
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </li>
                         <li className="nav-main-item">
-                            <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                aria-haspopup="true" aria-expanded="false" to="#">
                                 <i className="nav-main-link-icon si si-note"></i>
                                 <span className="nav-main-link-name">Forms</span>
-                            </a>
+                            </Link>
                             <ul className="nav-main-submenu">
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_forms_elements.html">
+                                    <Link className="nav-main-link" to="be_forms_elements.html">
                                         <span className="nav-main-link-name">Elements</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_forms_custom_controls.html">
+                                    <Link className="nav-main-link" to="be_forms_custom_controls.html">
                                         <span className="nav-main-link-name">Custom Controls</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_forms_layouts.html">
+                                    <Link className="nav-main-link" to="be_forms_layouts.html">
                                         <span className="nav-main-link-name">Layouts</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_forms_input_groups.html">
+                                    <Link className="nav-main-link" to="be_forms_input_groups.html">
                                         <span className="nav-main-link-name">Input Groups</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_forms_plugins.html">
+                                    <Link className="nav-main-link" to="be_forms_plugins.html">
                                         <span className="nav-main-link-name">Plugins</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_forms_editors.html">
+                                    <Link className="nav-main-link" to="be_forms_editors.html">
                                         <span className="nav-main-link-name">Editors</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_forms_validation.html">
+                                    <Link className="nav-main-link" to="be_forms_validation.html">
                                         <span className="nav-main-link-name">Validation</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_forms_wizard.html">
+                                    <Link className="nav-main-link" to="be_forms_wizard.html">
                                         <span className="nav-main-link-name">Wizard</span>
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </li>
                         <li className="nav-main-heading">Develop</li>
                         <li className="nav-main-item">
-                            <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                aria-haspopup="true" aria-expanded="false" to="#">
                                 <i className="nav-main-link-icon si si-wrench"></i>
                                 <span className="nav-main-link-name">Components</span>
-                            </a>
+                            </Link>
                             <ul className="nav-main-submenu">
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_comp_loaders.html">
+                                    <Link className="nav-main-link" to="be_comp_loaders.html">
                                         <span className="nav-main-link-name">Loaders</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_comp_image_cropper.html">
+                                    <Link className="nav-main-link" to="be_comp_image_cropper.html">
                                         <span className="nav-main-link-name">Image Cropper</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_comp_appear.html">
+                                    <Link className="nav-main-link" to="be_comp_appear.html">
                                         <span className="nav-main-link-name">Appear</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_comp_charts.html">
+                                    <Link className="nav-main-link" to="be_comp_charts.html">
                                         <span className="nav-main-link-name">Charts</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_comp_calendar.html">
+                                    <Link className="nav-main-link" to="be_comp_calendar.html">
                                         <span className="nav-main-link-name">Calendar</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_comp_sliders.html">
+                                    <Link className="nav-main-link" to="be_comp_sliders.html">
                                         <span className="nav-main-link-name">Sliders</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_comp_syntax_highlighting.html">
+                                    <Link className="nav-main-link" to="be_comp_syntax_highlighting.html">
                                         <span className="nav-main-link-name">Syntax Highlighting</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_comp_rating.html">
+                                    <Link className="nav-main-link" to="be_comp_rating.html">
                                         <span className="nav-main-link-name">Rating</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_comp_maps_google.html">
+                                    <Link className="nav-main-link" to="be_comp_maps_google.html">
                                         <span className="nav-main-link-name">Google Maps</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_comp_maps_vector.html">
+                                    <Link className="nav-main-link" to="be_comp_maps_vector.html">
                                         <span className="nav-main-link-name">Vector Maps</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_comp_dialogs.html">
+                                    <Link className="nav-main-link" to="be_comp_dialogs.html">
                                         <span className="nav-main-link-name">Dialogs</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_comp_notifications.html">
+                                    <Link className="nav-main-link" to="be_comp_notifications.html">
                                         <span className="nav-main-link-name">Notifications</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_comp_gallery.html">
+                                    <Link className="nav-main-link" to="be_comp_gallery.html">
                                         <span className="nav-main-link-name">Gallery</span>
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </li>
                         <li className="nav-main-item open">
-                            <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="true" href="#">
+                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                aria-haspopup="true" aria-expanded="true" to="#">
                                 <i className="nav-main-link-icon si si-magic-wand"></i>
                                 <span className="nav-main-link-name">Layout</span>
-                            </a>
+                            </Link>
                             <ul className="nav-main-submenu">
                                 <li className="nav-main-item open">
-                                    <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="true" href="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                        aria-haspopup="true" aria-expanded="true" to="#">
                                         <span className="nav-main-link-name">Page</span>
-                                    </a>
+                                    </Link>
                                     <ul className="nav-main-submenu">
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link active" href="be_layout_page_default.html">
+                                            <Link className="nav-main-link active" to="be_layout_page_default.html">
                                                 <span className="nav-main-link-name">Default</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_layout_page_flipped.html">
+                                            <Link className="nav-main-link" to="be_layout_page_flipped.html">
                                                 <span className="nav-main-link-name">Flipped</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link"
-                                               href="be_layout_page_native_scrolling.html">
+                                            <Link className="nav-main-link"
+                                                to="be_layout_page_native_scrolling.html">
                                                 <span className="nav-main-link-name">Native Scrolling</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                        aria-haspopup="true" aria-expanded="false" to="#">
                                         <span className="nav-main-link-name">Main Content</span>
-                                    </a>
+                                    </Link>
                                     <ul className="nav-main-submenu">
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link"
-                                               href="be_layout_content_main_full_width.html">
+                                            <Link className="nav-main-link"
+                                                to="be_layout_content_main_full_width.html">
                                                 <span className="nav-main-link-name">Full Width</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_layout_content_main_narrow.html">
+                                            <Link className="nav-main-link" to="be_layout_content_main_narrow.html">
                                                 <span className="nav-main-link-name">Narrow</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_layout_content_main_boxed.html">
+                                            <Link className="nav-main-link" to="be_layout_content_main_boxed.html">
                                                 <span className="nav-main-link-name">Boxed</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                        aria-haspopup="true" aria-expanded="false" to="#">
                                         <span className="nav-main-link-name">Header</span>
-                                    </a>
+                                    </Link>
                                     <ul className="nav-main-submenu">
                                         <li className="nav-main-heading">Fixed</li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_layout_header_fixed_light.html">
+                                            <Link className="nav-main-link" to="be_layout_header_fixed_light.html">
                                                 <span className="nav-main-link-name">Light</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_layout_header_fixed_dark.html">
+                                            <Link className="nav-main-link" to="be_layout_header_fixed_dark.html">
                                                 <span className="nav-main-link-name">Dark</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-heading">Static</li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_layout_header_static_light.html">
+                                            <Link className="nav-main-link" to="be_layout_header_static_light.html">
                                                 <span className="nav-main-link-name">Light</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_layout_header_static_dark.html">
+                                            <Link className="nav-main-link" to="be_layout_header_static_dark.html">
                                                 <span className="nav-main-link-name">Dark</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                        aria-haspopup="true" aria-expanded="false" to="#">
                                         <span className="nav-main-link-name">Sidebar</span>
-                                    </a>
+                                    </Link>
                                     <ul className="nav-main-submenu">
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_layout_sidebar_mini.html">
+                                            <Link className="nav-main-link" to="be_layout_sidebar_mini.html">
                                                 <span className="nav-main-link-name">Mini</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_layout_sidebar_light.html">
+                                            <Link className="nav-main-link" to="be_layout_sidebar_light.html">
                                                 <span className="nav-main-link-name">Light</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_layout_sidebar_dark.html">
+                                            <Link className="nav-main-link" to="be_layout_sidebar_dark.html">
                                                 <span className="nav-main-link-name">Dark</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_layout_sidebar_hidden.html">
+                                            <Link className="nav-main-link" to="be_layout_sidebar_hidden.html">
                                                 <span className="nav-main-link-name">Hidden</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                        aria-haspopup="true" aria-expanded="false" to="#">
                                         <span className="nav-main-link-name">Side Overlay</span>
-                                    </a>
+                                    </Link>
                                     <ul className="nav-main-submenu">
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="be_layout_side_overlay_visible.html">
+                                            <Link className="nav-main-link" to="be_layout_side_overlay_visible.html">
                                                 <span className="nav-main-link-name">Visible</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link"
-                                               href="be_layout_side_overlay_mode_hover.html">
+                                            <Link className="nav-main-link"
+                                                to="be_layout_side_overlay_mode_hover.html">
                                                 <span className="nav-main-link-name">Hover Mode</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link"
-                                               href="be_layout_side_overlay_no_page_overlay.html">
+                                            <Link className="nav-main-link"
+                                                to="be_layout_side_overlay_no_page_overlay.html">
                                                 <span className="nav-main-link-name">No Page Overlay</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_layout_api.html">
+                                    <Link className="nav-main-link" to="be_layout_api.html">
                                         <span className="nav-main-link-name">API</span>
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </li>
                         <li className="nav-main-item">
-                            <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                aria-haspopup="true" aria-expanded="false" to="#">
                                 <i className="nav-main-link-icon si si-puzzle"></i>
                                 <span className="nav-main-link-name">Multi Level Menu</span>
-                            </a>
+                            </Link>
                             <ul className="nav-main-submenu">
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="#">
+                                    <Link className="nav-main-link" to="#">
                                         <span className="nav-main-link-name">Link 1-1</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="#">
+                                    <Link className="nav-main-link" to="#">
                                         <span className="nav-main-link-name">Link 1-2</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                       aria-haspopup="true" aria-expanded="false" href="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                        aria-haspopup="true" aria-expanded="false" to="#">
                                         <span className="nav-main-link-name">Sub Level 2</span>
-                                    </a>
+                                    </Link>
                                     <ul className="nav-main-submenu">
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="#">
+                                            <Link className="nav-main-link" to="#">
                                                 <span className="nav-main-link-name">Link 2-1</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link" href="#">
+                                            <Link className="nav-main-link" to="#">
                                                 <span className="nav-main-link-name">Link 2-2</span>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="nav-main-item">
-                                            <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                               aria-haspopup="true" aria-expanded="false" href="#">
+                                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                                aria-haspopup="true" aria-expanded="false" to="#">
                                                 <span className="nav-main-link-name">Sub Level 3</span>
-                                            </a>
+                                            </Link>
                                             <ul className="nav-main-submenu">
                                                 <li className="nav-main-item">
-                                                    <a className="nav-main-link" href="#">
+                                                    <Link className="nav-main-link" to="#">
                                                         <span className="nav-main-link-name">Link 3-1</span>
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li className="nav-main-item">
-                                                    <a className="nav-main-link" href="#">
+                                                    <Link className="nav-main-link" to="#">
                                                         <span className="nav-main-link-name">Link 3-2</span>
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li className="nav-main-item">
-                                                    <a className="nav-main-link nav-main-link-submenu"
-                                                       data-toggle="submenu" aria-haspopup="true"
-                                                       aria-expanded="false" href="#">
+                                                    <Link className="nav-main-link nav-main-link-submenu"
+                                                        data-toggle="submenu" aria-haspopup="true"
+                                                        aria-expanded="false" to="#">
                                                         <span className="nav-main-link-name">Sub Level 4</span>
-                                                    </a>
+                                                    </Link>
                                                     <ul className="nav-main-submenu">
                                                         <li className="nav-main-item">
-                                                            <a className="nav-main-link" href="#">
+                                                            <Link className="nav-main-link" to="#">
                                                                 <span className="nav-main-link-name">Link 4-1</span>
-                                                            </a>
+                                                            </Link>
                                                         </li>
                                                         <li className="nav-main-item">
-                                                            <a className="nav-main-link" href="#">
+                                                            <Link className="nav-main-link" to="#">
                                                                 <span className="nav-main-link-name">Link 4-2</span>
-                                                            </a>
+                                                            </Link>
                                                         </li>
                                                         <li className="nav-main-item">
-                                                            <a className="nav-main-link nav-main-link-submenu"
-                                                               data-toggle="submenu" aria-haspopup="true"
-                                                               aria-expanded="false" href="#">
-                                                                    <span
-                                                                        className="nav-main-link-name">Sub Level 5</span>
-                                                            </a>
+                                                            <Link className="nav-main-link nav-main-link-submenu"
+                                                                data-toggle="submenu" aria-haspopup="true"
+                                                                aria-expanded="false" to="#">
+                                                                <span
+                                                                    className="nav-main-link-name">Sub Level 5</span>
+                                                            </Link>
                                                             <ul className="nav-main-submenu">
                                                                 <li className="nav-main-item">
-                                                                    <a className="nav-main-link" href="#">
+                                                                    <Link className="nav-main-link" to="#">
                                                                         <span className="nav-main-link-name">Link 5-1</span>
-                                                                    </a>
+                                                                    </Link>
                                                                 </li>
                                                                 <li className="nav-main-item">
-                                                                    <a className="nav-main-link" href="#">
+                                                                    <Link className="nav-main-link" to="#">
                                                                         <span className="nav-main-link-name">Link 5-2</span>
-                                                                    </a>
+                                                                    </Link>
                                                                 </li>
                                                                 <li className="nav-main-item">
-                                                                    <a className="nav-main-link nav-main-link-submenu"
-                                                                       data-toggle="submenu" aria-haspopup="true"
-                                                                       aria-expanded="false" href="#">
+                                                                    <Link className="nav-main-link nav-main-link-submenu"
+                                                                        data-toggle="submenu" aria-haspopup="true"
+                                                                        aria-expanded="false" to="#">
                                                                         <span className="nav-main-link-name">Sub Level 6</span>
-                                                                    </a>
+                                                                    </Link>
                                                                     <ul className="nav-main-submenu">
                                                                         <li className="nav-main-item">
-                                                                            <a className="nav-main-link" href="#">
-                                                                                    <span
-                                                                                        className="nav-main-link-name">Link 6-1</span>
-                                                                            </a>
+                                                                            <Link className="nav-main-link" to="#">
+                                                                                <span
+                                                                                    className="nav-main-link-name">Link 6-1</span>
+                                                                            </Link>
                                                                         </li>
                                                                         <li className="nav-main-item">
-                                                                            <a className="nav-main-link" href="#">
-                                                                                    <span
-                                                                                        className="nav-main-link-name">Link 6-2</span>
-                                                                            </a>
+                                                                            <Link className="nav-main-link" to="#">
+                                                                                <span
+                                                                                    className="nav-main-link-name">Link 6-2</span>
+                                                                            </Link>
                                                                         </li>
                                                                     </ul>
                                                                 </li>
@@ -793,184 +794,184 @@ const Sidebar = () => {
                         </li>
                         <li className="nav-main-heading">Pages</li>
                         <li className="nav-main-item">
-                            <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                aria-haspopup="true" aria-expanded="false" to="#">
                                 <i className="nav-main-link-icon si si-layers"></i>
                                 <span className="nav-main-link-name">Generic</span>
-                            </a>
+                            </Link>
                             <ul className="nav-main-submenu">
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_pages_generic_blank.html">
+                                    <Link className="nav-main-link" to="be_pages_generic_blank.html">
                                         <span className="nav-main-link-name">Blank</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_pages_generic_blank_block.html">
+                                    <Link className="nav-main-link" to="be_pages_generic_blank_block.html">
                                         <span className="nav-main-link-name">Blank (Block)</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_pages_generic_search.html">
+                                    <Link className="nav-main-link" to="be_pages_generic_search.html">
                                         <span className="nav-main-link-name">Search</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_pages_generic_profile.html">
+                                    <Link className="nav-main-link" to="be_pages_generic_profile.html">
                                         <span className="nav-main-link-name">Profile</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_pages_generic_profile_edit.html">
+                                    <Link className="nav-main-link" to="be_pages_generic_profile_edit.html">
                                         <span className="nav-main-link-name">Profile Edit</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_pages_generic_inbox.html">
+                                    <Link className="nav-main-link" to="be_pages_generic_inbox.html">
                                         <span className="nav-main-link-name">Inbox</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_pages_generic_invoice.html">
+                                    <Link className="nav-main-link" to="be_pages_generic_invoice.html">
                                         <span className="nav-main-link-name">Invoice</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_pages_generic_faq.html">
+                                    <Link className="nav-main-link" to="be_pages_generic_faq.html">
                                         <span className="nav-main-link-name">FAQ</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_pages_generic_team.html">
+                                    <Link className="nav-main-link" to="be_pages_generic_team.html">
                                         <span className="nav-main-link-name">Team</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_pages_generic_contact.html">
+                                    <Link className="nav-main-link" to="be_pages_generic_contact.html">
                                         <span className="nav-main-link-name">Contact</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_pages_generic_support.html">
+                                    <Link className="nav-main-link" to="be_pages_generic_support.html">
                                         <span className="nav-main-link-name">Support</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_pages_generic_upgrade_plan.html">
+                                    <Link className="nav-main-link" to="be_pages_generic_upgrade_plan.html">
                                         <span className="nav-main-link-name">Upgrade Plan</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="op_maintenance.html">
+                                    <Link className="nav-main-link" to="op_maintenance.html">
                                         <span className="nav-main-link-name">Maintenance</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="op_status.html">
+                                    <Link className="nav-main-link" to="op_status.html">
                                         <span className="nav-main-link-name">Status</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="op_coming_soon.html">
+                                    <Link className="nav-main-link" to="op_coming_soon.html">
                                         <span className="nav-main-link-name">Coming Soon</span>
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </li>
                         <li className="nav-main-item">
-                            <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                aria-haspopup="true" aria-expanded="false" to="#">
                                 <i className="nav-main-link-icon si si-lock"></i>
                                 <span className="nav-main-link-name">Authentication</span>
-                            </a>
+                            </Link>
                             <ul className="nav-main-submenu">
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_pages_auth_all.html">
+                                    <Link className="nav-main-link" to="be_pages_auth_all.html">
                                         <span className="nav-main-link-name">All</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="op_auth_signin.html">
+                                    <Link className="nav-main-link" to="op_auth_signin.html">
                                         <span className="nav-main-link-name">Sign In</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="op_auth_signin2.html">
+                                    <Link className="nav-main-link" to="op_auth_signin2.html">
                                         <span className="nav-main-link-name">Sign In 2</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="op_auth_signup.html">
+                                    <Link className="nav-main-link" to="op_auth_signup.html">
                                         <span className="nav-main-link-name">Sign Up</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="op_auth_signup2.html">
+                                    <Link className="nav-main-link" to="op_auth_signup2.html">
                                         <span className="nav-main-link-name">Sign Up 2</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="op_auth_lock.html">
+                                    <Link className="nav-main-link" to="op_auth_lock.html">
                                         <span className="nav-main-link-name">Lock Screen</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="op_auth_lock2.html">
+                                    <Link className="nav-main-link" to="op_auth_lock2.html">
                                         <span className="nav-main-link-name">Lock Screen 2</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="op_auth_reminder.html">
+                                    <Link className="nav-main-link" to="op_auth_reminder.html">
                                         <span className="nav-main-link-name">Pass Reminder</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="op_auth_reminder2.html">
+                                    <Link className="nav-main-link" to="op_auth_reminder2.html">
                                         <span className="nav-main-link-name">Pass Reminder 2</span>
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </li>
                         <li className="nav-main-item">
-                            <a className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                               aria-haspopup="true" aria-expanded="false" href="#">
+                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
+                                aria-haspopup="true" aria-expanded="false" to="#">
                                 <i className="nav-main-link-icon si si-fire"></i>
                                 <span className="nav-main-link-name">Error Pages</span>
-                            </a>
+                            </Link>
                             <ul className="nav-main-submenu">
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="be_pages_error_all.html">
+                                    <Link className="nav-main-link" to="be_pages_error_all.html">
                                         <span className="nav-main-link-name">All</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="op_error_400.html">
+                                    <Link className="nav-main-link" to="op_error_400.html">
                                         <span className="nav-main-link-name">400</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="op_error_401.html">
+                                    <Link className="nav-main-link" to="op_error_401.html">
                                         <span className="nav-main-link-name">401</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="op_error_403.html">
+                                    <Link className="nav-main-link" to="op_error_403.html">
                                         <span className="nav-main-link-name">403</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="op_error_404.html">
+                                    <Link className="nav-main-link" to="op_error_404.html">
                                         <span className="nav-main-link-name">404</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="op_error_500.html">
+                                    <Link className="nav-main-link" to="op_error_500.html">
                                         <span className="nav-main-link-name">500</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <a className="nav-main-link" href="op_error_503.html">
+                                    <Link className="nav-main-link" to="op_error_503.html">
                                         <span className="nav-main-link-name">503</span>
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </li>

@@ -4,7 +4,7 @@ import DashboardContainer from "../pages/admin-dashboard/dashboard/DashboardCont
 const adminRoutes = [
     {
         path: "/login",
-        element: <LoginContainer/>,
+        element: <LoginContainer />,
         auth: false
     },
     {

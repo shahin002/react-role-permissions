@@ -1,5 +1,5 @@
 import React from 'react';
-import './AdminLayout.css'
+import "./assets/Admin.css";
 import Header from "./includes/Header";
 import Sidebar from "./includes/Sidebar";
 import Footer from "./includes/Footer";

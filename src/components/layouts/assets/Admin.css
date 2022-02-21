@@ -1,0 +1,5 @@
+@import url('./css/oneui.css');
+
+.auth-layout-bg-image{
+    background-image: url('./media/photos/photo6@2x.jpg');
+}
