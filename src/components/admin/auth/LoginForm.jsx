@@ -1,15 +1,43 @@
 import React from 'react'
+import {useForm} from "react-hook-form";
+import {useDispatch} from "react-redux";
+import {loginSubmitAction} from "../../../redux/admin-dashboard/auth/AuthAction";
 
 export const LoginForm = () => {
+    const {register, handleSubmit, formState: {errors}} = useForm();
+    const dispatch = useDispatch();
+    const submitHandler = (data) => {
+        dispatch(loginSubmitAction(data));
+    }
     return (
         <>
-            <form className="js-validation-signin" method="POST">
+            <form className="js-validation-signin" onSubmit={handleSubmit(submitHandler)} method="POST">
                 <div className="py-1">
                     <div className="form-group">
-                        <input type="text" className="form-control form-control-alt form-control-lg" id="email" name="email" placeholder="Email" />
+                        <input type="email" className="form-control form-control-alt form-control-lg"
+                               id="email"
+                               placeholder="Email"
+                               autoComplete="email"
+                               {...register('email', {
+                                   required: "Email field required",
+                               })}
+                        />
+                        <div className="text-danger text-sm">{errors.email?.message}</div>
+
                     </div>
                     <div className="form-group">
-                        <input type="password" className="form-control form-control-alt form-control-lg" id="password" name="password" placeholder="Password" />
+                        <input type="password" className="form-control form-control-alt form-control-lg"
+                               id="password"
+                               placeholder="Password"
+                               autoComplete="current-password"
+
+                               {...register('password', {
+                                   required: "Password field required",
+                               })}
+                        />
+
+                        <div className="text-danger text-sm">{errors.password?.message}</div>
+
                     </div>
                 </div>
                 <div className="form-group row">

@@ -10,6 +10,9 @@ import HttpsRedirect from "react-https-redirect";
 import {BrowserRouter} from "react-router-dom";
 import {toast, ToastContainer} from "react-toastify";
 
+// Import axios.js so that it can inject token in every request
+require('./services/axios');
+
 toast.configure();
 ReactDOM.render(
     <Provider store={Store}>
