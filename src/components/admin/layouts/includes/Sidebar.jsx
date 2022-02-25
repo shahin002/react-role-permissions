@@ -1,8 +1,20 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import $ from 'jquery';
 
 const Sidebar = () => {
-    const currentPath = useLocation().pathname;
+    useEffect(() => {
+        $(function () {
+            $('.nav-main-link').on('click', function () {
+                if ($(this).parent('.nav-main-item').hasClass('open')) {
+                    $(this).parent('.nav-main-item').removeClass('open');
+                } else {
+                    $('.nav-main-item').removeClass('open');
+                    $(this).parents('.nav-main-item').addClass('open');
+                }
+            });
+        });
+    }, []);
     return (
         <>
             <nav id="sidebar" aria-label="Main Navigation">
@@ -24,15 +36,13 @@ const Sidebar = () => {
                             </Link>
                         </li>
                         <li className="nav-main-item">
-                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                aria-haspopup="true" aria-expanded="false" to="#!">
+                            <Link className="nav-main-link nav-main-link-submenu" to="#!">
                                 <i className="nav-main-link-icon si si-layers"></i>
                                 <span className="nav-main-link-name">Page Packs</span>
                             </Link>
                             <ul className="nav-main-submenu">
                                 <li className="nav-main-item">
-                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                        aria-haspopup="true" aria-expanded="false" to="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" to="#">
                                         <i className="nav-main-link-icon si si-bag"></i>
                                         <span className="nav-main-link-name">e-Commerce</span>
                                     </Link>
@@ -70,8 +80,7 @@ const Sidebar = () => {
                                     </ul>
                                 </li>
                                 <li className="nav-main-item">
-                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                        aria-haspopup="true" aria-expanded="false" to="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" to="#">
                                         <i className="nav-main-link-icon si si-handbag"></i>
                                         <span className="nav-main-link-name">e-Commerce Store</span>
                                     </Link>
@@ -104,8 +113,7 @@ const Sidebar = () => {
                                     </ul>
                                 </li>
                                 <li className="nav-main-item">
-                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                        aria-haspopup="true" aria-expanded="false" to="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" to="#">
                                         <i className="nav-main-link-icon si si-pencil"></i>
                                         <span className="nav-main-link-name">Blog</span>
                                     </Link>
@@ -138,8 +146,7 @@ const Sidebar = () => {
                                     </ul>
                                 </li>
                                 <li className="nav-main-item">
-                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                        aria-haspopup="true" aria-expanded="false" to="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" to="#">
                                         <i className="nav-main-link-icon si si-graduation"></i>
                                         <span className="nav-main-link-name">e-Learning</span>
                                     </Link>
@@ -162,8 +169,7 @@ const Sidebar = () => {
                                     </ul>
                                 </li>
                                 <li className="nav-main-item">
-                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                        aria-haspopup="true" aria-expanded="false" to="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" to="#">
                                         <i className="nav-main-link-icon si si-bubbles"></i>
                                         <span className="nav-main-link-name">Forum</span>
                                     </Link>
@@ -186,8 +192,7 @@ const Sidebar = () => {
                                     </ul>
                                 </li>
                                 <li className="nav-main-item">
-                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                        aria-haspopup="true" aria-expanded="false" to="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" to="#">
                                         <i className="nav-main-link-icon si si-magnet"></i>
                                         <span className="nav-main-link-name">Boxed Backend</span>
                                     </Link>
@@ -238,8 +243,7 @@ const Sidebar = () => {
                         </li>
                         <li className="nav-main-heading">User Interface</li>
                         <li className="nav-main-item">
-                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                aria-haspopup="true" aria-expanded="false" to="#">
+                            <Link className="nav-main-link nav-main-link-submenu" to="#">
                                 <i className="nav-main-link-icon si si-energy"></i>
                                 <span className="nav-main-link-name">Blocks</span>
                             </Link>
@@ -272,8 +276,7 @@ const Sidebar = () => {
                             </ul>
                         </li>
                         <li className="nav-main-item">
-                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                aria-haspopup="true" aria-expanded="false" to="#">
+                            <Link className="nav-main-link nav-main-link-submenu" to="#">
                                 <i className="nav-main-link-icon si si-badge"></i>
                                 <span className="nav-main-link-name">Elements</span>
                             </Link>
@@ -376,8 +379,7 @@ const Sidebar = () => {
                             </ul>
                         </li>
                         <li className="nav-main-item">
-                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                aria-haspopup="true" aria-expanded="false" to="#">
+                            <Link className="nav-main-link nav-main-link-submenu" to="#">
                                 <i className="nav-main-link-icon si si-grid"></i>
                                 <span className="nav-main-link-name">Tables</span>
                             </Link>
@@ -410,8 +412,7 @@ const Sidebar = () => {
                             </ul>
                         </li>
                         <li className="nav-main-item">
-                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                aria-haspopup="true" aria-expanded="false" to="#">
+                            <Link className="nav-main-link nav-main-link-submenu" to="#">
                                 <i className="nav-main-link-icon si si-note"></i>
                                 <span className="nav-main-link-name">Forms</span>
                             </Link>
@@ -459,9 +460,8 @@ const Sidebar = () => {
                             </ul>
                         </li>
                         <li className="nav-main-heading">Develop</li>
-                        <li className="nav-main-item">
-                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                aria-haspopup="true" aria-expanded="false" to="#">
+                        <li className="nav-main-item open">
+                            <Link className="nav-main-link nav-main-link-submenu" to="#">
                                 <i className="nav-main-link-icon si si-wrench"></i>
                                 <span className="nav-main-link-name">Components</span>
                             </Link>
@@ -565,8 +565,7 @@ const Sidebar = () => {
                                     </ul>
                                 </li>
                                 <li className="nav-main-item">
-                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                        aria-haspopup="true" aria-expanded="false" to="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" to="#">
                                         <span className="nav-main-link-name">Main Content</span>
                                     </Link>
                                     <ul className="nav-main-submenu">
@@ -589,8 +588,7 @@ const Sidebar = () => {
                                     </ul>
                                 </li>
                                 <li className="nav-main-item">
-                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                        aria-haspopup="true" aria-expanded="false" to="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" to="#">
                                         <span className="nav-main-link-name">Header</span>
                                     </Link>
                                     <ul className="nav-main-submenu">
@@ -619,8 +617,7 @@ const Sidebar = () => {
                                     </ul>
                                 </li>
                                 <li className="nav-main-item">
-                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                        aria-haspopup="true" aria-expanded="false" to="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" to="#">
                                         <span className="nav-main-link-name">Sidebar</span>
                                     </Link>
                                     <ul className="nav-main-submenu">
@@ -647,8 +644,7 @@ const Sidebar = () => {
                                     </ul>
                                 </li>
                                 <li className="nav-main-item">
-                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                        aria-haspopup="true" aria-expanded="false" to="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" to="#">
                                         <span className="nav-main-link-name">Side Overlay</span>
                                     </Link>
                                     <ul className="nav-main-submenu">
@@ -679,8 +675,7 @@ const Sidebar = () => {
                             </ul>
                         </li>
                         <li className="nav-main-item">
-                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                aria-haspopup="true" aria-expanded="false" to="#">
+                            <Link className="nav-main-link nav-main-link-submenu" to="#">
                                 <i className="nav-main-link-icon si si-puzzle"></i>
                                 <span className="nav-main-link-name">Multi Level Menu</span>
                             </Link>
@@ -696,8 +691,7 @@ const Sidebar = () => {
                                     </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                        aria-haspopup="true" aria-expanded="false" to="#">
+                                    <Link className="nav-main-link nav-main-link-submenu" to="#">
                                         <span className="nav-main-link-name">Sub Level 2</span>
                                     </Link>
                                     <ul className="nav-main-submenu">
@@ -795,8 +789,7 @@ const Sidebar = () => {
                         </li>
                         <li className="nav-main-heading">Pages</li>
                         <li className="nav-main-item">
-                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                aria-haspopup="true" aria-expanded="false" to="#">
+                            <Link className="nav-main-link nav-main-link-submenu" to="#">
                                 <i className="nav-main-link-icon si si-layers"></i>
                                 <span className="nav-main-link-name">Generic</span>
                             </Link>
@@ -879,8 +872,7 @@ const Sidebar = () => {
                             </ul>
                         </li>
                         <li className="nav-main-item">
-                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                aria-haspopup="true" aria-expanded="false" to="#">
+                            <Link className="nav-main-link nav-main-link-submenu" to="#">
                                 <i className="nav-main-link-icon si si-lock"></i>
                                 <span className="nav-main-link-name">Authentication</span>
                             </Link>
@@ -933,8 +925,7 @@ const Sidebar = () => {
                             </ul>
                         </li>
                         <li className="nav-main-item">
-                            <Link className="nav-main-link nav-main-link-submenu" data-toggle="submenu"
-                                aria-haspopup="true" aria-expanded="false" to="#">
+                            <Link className="nav-main-link nav-main-link-submenu" to="#">
                                 <i className="nav-main-link-icon si si-fire"></i>
                                 <span className="nav-main-link-name">Error Pages</span>
                             </Link>
