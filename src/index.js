@@ -8,7 +8,9 @@ import {Provider} from "react-redux";
 import Store from "./redux/Store";
 import HttpsRedirect from "react-https-redirect";
 import {BrowserRouter} from "react-router-dom";
+import {toast, ToastContainer} from "react-toastify";
 
+toast.configure();
 ReactDOM.render(
     <Provider store={Store}>
         <HttpsRedirect>
@@ -16,6 +18,7 @@ ReactDOM.render(
                 <App/>
             </BrowserRouter>
         </HttpsRedirect>
+        <ToastContainer/>
     </Provider>,
     document.getElementById('root')
 );
