@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import $ from 'jquery';
 
 const Sidebar = () => {
+    const currentPath = useLocation().pathname;
     useEffect(() => {
         $(function () {
             $('.nav-main-link').on('click', function () {
