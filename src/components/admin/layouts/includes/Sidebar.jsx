@@ -23,6 +23,15 @@ const Sidebar = () => {
             $("a[data-action='sidebar_close']").on('click', function () {
                 $("#page-container").removeClass("sidebar-o-xs");
             });
+            $(document).mouseup(function (e) {
+                var container = $("#page-header-user-dropdown");
+                if (!container.is(e.target) && container.next('.dropdown-menu').hasClass('show')) {
+                    container.next('.dropdown-menu').removeClass('show');
+                }
+            });
+            $("#page-header-user-dropdown").on('click', function () {
+                $(this).next('.dropdown-menu').addClass('show');
+            });
         });
     }, []);
     return (
@@ -37,9 +46,9 @@ const Sidebar = () => {
                     </Link>
 
                     <div>
-                        <Link class="d-lg-none btn btn-sm btn-dual ml-2" data-toggle="layout"
+                        <Link className="d-lg-none btn btn-sm btn-dual ml-2" data-toggle="layout"
                               data-action="sidebar_close" to="#">
-                            <i class="fa fa-fw fa-times"></i>
+                            <i className="fa fa-fw fa-times"></i>
                         </Link>
                     </div>
                 </div>
