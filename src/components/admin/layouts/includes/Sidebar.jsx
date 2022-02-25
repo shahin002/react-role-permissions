@@ -30,7 +30,7 @@ const Sidebar = () => {
                 <div className="content-side content-side-full">
                     <ul className="nav-main">
                         <li className="nav-main-item">
-                            <Link className="nav-main-link" to="be_pages_dashboard.html">
+                            <Link className={`nav-main-link ${(currentPath === '/admin/dashboard') ? 'active' : ''}`} to="/admin/dashboard">
                                 <i className="nav-main-link-icon si si-speedometer"></i>
                                 <span className="nav-main-link-name">Dashboard</span>
                             </Link>
