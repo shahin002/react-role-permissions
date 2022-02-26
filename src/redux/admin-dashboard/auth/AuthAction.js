@@ -45,7 +45,6 @@ export const loginSubmitAction = (postData) => async (dispatch) => {
 
 async function getProfileInformation(token) {
     let userInfo = {};
-    console.log(token)
 
     await axios.get(`http://laravel07-starter.herokuapp.com/api/v1/user-info`)
         .then((res) => {

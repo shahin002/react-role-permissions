@@ -1,12 +1,32 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {useForm} from "react-hook-form";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {loginSubmitAction} from "../../../redux/admin-dashboard/auth/AuthAction";
+import {toast} from "react-toastify";
+import {useNavigate} from "react-router-dom";
 
 export const LoginForm = () => {
     const {register, handleSubmit, formState: {errors}} = useForm();
+    const navigate = useNavigate();
     const dispatch = useDispatch();
+    const isLoading = useSelector((state) => state.auth.isLoading);
+    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+    const loginMessage = useSelector((state) => state.auth.loginMessage);
+
+    useEffect(() => {
+        console.log(loginMessage)
+        console.log(isLoggedIn)
+        if (typeof loginMessage === 'undefined' || loginMessage === null) {
+            toast.error("Something Went Wrong");
+        } else {
+            if (isLoggedIn && loginMessage.length > 0) {
+                navigate("/admin/dashboard");
+            }
+        }
+    }, [isLoggedIn, loginMessage]);
+
     const submitHandler = (data) => {
+        console.log('submithandle')
         dispatch(loginSubmitAction(data));
     }
     return (
