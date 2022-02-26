@@ -55,6 +55,27 @@ export const logoutAuthenticatedUser = () => async (dispatch) => {
     dispatch({ type: Types.LOGOUT_AUTH, payload: data });
 };
 
+export const getAuthenticatedProfileInformationAction = () => async (dispatch) => {
+    let data = {
+        status: false,
+        access_token: null,
+        userData: null
+    };
+
+    const userData = localStorage.getItem('userData');
+    const tokenData = localStorage.getItem('access_token');
+
+    if(userData != null && tokenData != null){
+        data.status = true;
+        data.userData = JSON.parse(userData);
+        data.access_token = tokenData;
+    }else{
+        data.status = false;
+    }
+
+    dispatch({ type: Types.GET_AUTH_DATA, payload: data });
+};
+
 async function getProfileInformation(token) {
     let userInfo = {};
 

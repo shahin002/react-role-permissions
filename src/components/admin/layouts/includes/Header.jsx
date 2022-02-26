@@ -7,9 +7,7 @@ const Header = () => {
     const dispatch = useDispatch();
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
     const submitLogout = useSelector((state) => state.auth.submitLogout);
-    const user = localStorage.getItem('userData');
-    console.log(user)
-
+    const user = useSelector((state) => state.auth.authUserData);
     const logout = () => {
         dispatch(logoutAuthenticatedUser());
     }
@@ -39,7 +37,7 @@ const Header = () => {
                         <div className="dropdown d-inline-block ml-2">
                             <button type="button" className="btn btn-sm btn-dual" id="page-header-user-dropdown"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span className="d-none d-sm-inline-block ml-1">Adam</span>
+                                <span className="d-none d-sm-inline-block ml-1">{user?.name}</span>
                                 <i className="fa fa-fw fa-angle-down d-none d-sm-inline-block"></i>
                             </button>
                             <div className="dropdown-menu dropdown-menu-right p-0 border-0 font-size-sm"

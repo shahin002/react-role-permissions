@@ -2,22 +2,16 @@ import React, {useEffect} from 'react'
 import {useForm} from "react-hook-form";
 import {useDispatch, useSelector} from "react-redux";
 import {loginSubmitAction} from "../../../redux/admin-dashboard/auth/AuthAction";
-import {toast} from "react-toastify";
-import {useNavigate} from "react-router-dom";
 
 export const LoginForm = () => {
     const {register, handleSubmit, formState: {errors}} = useForm();
-    const navigate = useNavigate();
     const dispatch = useDispatch();
     // const isLoading = useSelector((state) => state.auth.isLoading);
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
     const loginMessage = useSelector((state) => state.auth.loginMessage);
 
     useEffect(() => {
-        console.log(loginMessage)
-        console.log(isLoggedIn)
         if (isLoggedIn && Boolean(loginMessage)) {
-            console.log("navigate")
             window.location.href = "/admin/dashboard";
         }
     }, [isLoggedIn, loginMessage]);
