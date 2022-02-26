@@ -1,6 +1,23 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {Link} from "react-router-dom";
+import {logoutAuthenticatedUser} from "../../../../redux/admin-dashboard/auth/AuthAction";
+import {useDispatch, useSelector} from "react-redux";
 
 const Header = () => {
+    const dispatch = useDispatch();
+    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+    const submitLogout = useSelector((state) => state.auth.submitLogout);
+    const user = localStorage.getItem('userData');
+    console.log(user)
+
+    const logout = () => {
+        dispatch(logoutAuthenticatedUser());
+    }
+    useEffect(() => {
+        if (!isLoggedIn && submitLogout) {
+            window.location.href = "/login";
+        }
+    }, [isLoggedIn, submitLogout]);
     return (
         <>
             <header id="page-header">
@@ -27,43 +44,13 @@ const Header = () => {
                             </button>
                             <div className="dropdown-menu dropdown-menu-right p-0 border-0 font-size-sm"
                                  aria-labelledby="page-header-user-dropdown">
-                                <div className="p-3 text-center bg-primary">
-                                </div>
                                 <div className="p-2">
                                     <h5 className="dropdown-header text-uppercase">User Options</h5>
-                                    <a className="dropdown-item d-flex align-items-center justify-content-between"
-                                       href="be_pages_generic_inbox.html">
-                                        <span>Inbox</span>
-                                        <span>
-                                            <span className="badge badge-pill badge-primary">3</span>
-                                            <i className="si si-envelope-open ml-1"></i>
-                                        </span>
-                                    </a>
-                                    <a className="dropdown-item d-flex align-items-center justify-content-between"
-                                       href="be_pages_generic_profile.html">
-                                        <span>Profile</span>
-                                        <span>
-                                            <span className="badge badge-pill badge-success">1</span>
-                                            <i className="si si-user ml-1"></i>
-                                        </span>
-                                    </a>
-                                    <a className="dropdown-item d-flex align-items-center justify-content-between"
-                                       href="#!">
-                                        <span>Settings</span>
-                                        <i className="si si-settings"></i>
-                                    </a>
-                                    <div role="separator" className="dropdown-divider"></div>
-                                    <h5 className="dropdown-header text-uppercase">Actions</h5>
-                                    <a className="dropdown-item d-flex align-items-center justify-content-between"
-                                       href="op_auth_lock.html">
-                                        <span>Lock Account</span>
-                                        <i className="si si-lock ml-1"></i>
-                                    </a>
-                                    <a className="dropdown-item d-flex align-items-center justify-content-between"
-                                       href="op_auth_signin.html">
+                                    <Link className="dropdown-item d-flex align-items-center justify-content-between"
+                                          to="#" onClick={() => logout()}>
                                         <span>Log Out</span>
                                         <i className="si si-logout ml-1"></i>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

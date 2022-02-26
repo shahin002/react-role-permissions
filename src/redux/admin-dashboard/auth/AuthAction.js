@@ -43,6 +43,18 @@ export const loginSubmitAction = (postData) => async (dispatch) => {
     dispatch({type: Types.AUTH_LOGIN_CHECK, payload: data});
 };
 
+export const logoutAuthenticatedUser = () => async (dispatch) => {
+    let data = {
+        status: false,
+        tokenData: null,
+        userData: null
+    };
+
+    localStorage.removeItem('userData');
+    localStorage.removeItem('access_token');
+    dispatch({ type: Types.LOGOUT_AUTH, payload: data });
+};
+
 async function getProfileInformation(token) {
     let userInfo = {};
 
