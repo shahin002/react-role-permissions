@@ -1,10 +1,14 @@
+import React, {useEffect} from "react";
+import {Routes, Route, Navigate} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+
 import LoginContainer from "../pages/admin-dashboard/auth/LoginContainer";
 import SignUpContainer from "../pages/admin-dashboard/auth/SignUpContainer";
 import DashboardContainer from "../pages/admin-dashboard/dashboard/DashboardContainer";
-import {useDispatch, useSelector} from "react-redux";
-import React, {useEffect} from "react";
 import {getAuthenticatedProfileInformationAction} from "../redux/admin-dashboard/auth/AuthAction";
-import {Routes, Route, Navigate} from "react-router-dom";
+
+import UsersListContainer from "../pages/admin-dashboard/users/UsersListContainer";
+import RolesListContainer from "../pages/admin-dashboard/roles/RolesListContainer";
 
 const AdminRoutes = () => {
     const dispatch = useDispatch();
@@ -23,6 +27,16 @@ const AdminRoutes = () => {
         {
             path: "/admin/dashboard",
             element: <DashboardContainer/>,
+            auth: true
+        },
+        {
+            path: "/admin/users",
+            element: <UsersListContainer/>,
+            auth: true
+        },
+        {
+            path: "/admin/roles",
+            element: <RolesListContainer/>,
             auth: true
         },
     ];

@@ -69,12 +69,12 @@ const Sidebar = () => {
                             </Link>
                             <ul className="nav-main-submenu">
                                 <li className="nav-main-item">
-                                    <Link className="nav-main-link" to="#">
+                                    <Link className="nav-main-link" to="/admin/users">
                                         <span className="nav-main-link-name">User Management</span>
                                     </Link>
                                 </li>
                                 <li className="nav-main-item">
-                                    <Link className="nav-main-link" to="#">
+                                    <Link className="nav-main-link" to="/admin/roles">
                                         <span className="nav-main-link-name"> Role Management</span>
                                     </Link>
                                 </li>
