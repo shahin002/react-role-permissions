@@ -9,6 +9,7 @@ import {getAuthenticatedProfileInformationAction} from "../redux/admin-dashboard
 
 import UsersListContainer from "../pages/admin-dashboard/users/UsersListContainer";
 import RolesListContainer from "../pages/admin-dashboard/roles/RolesListContainer";
+import UsersCreateContainer from "../pages/admin-dashboard/users/UsersCreateContainer";
 
 const AdminRoutes = () => {
     const dispatch = useDispatch();
@@ -32,6 +33,11 @@ const AdminRoutes = () => {
         {
             path: "/admin/users",
             element: <UsersListContainer/>,
+            auth: true
+        },
+        {
+            path: "/admin/users/create",
+            element: <UsersCreateContainer/>,
             auth: true
         },
         {

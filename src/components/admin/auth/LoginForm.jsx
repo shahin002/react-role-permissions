@@ -6,7 +6,7 @@ import {loginSubmitAction} from "../../../redux/admin-dashboard/auth/AuthAction"
 export const LoginForm = () => {
     const {register, handleSubmit, formState: {errors}} = useForm();
     const dispatch = useDispatch();
-    // const isLoading = useSelector((state) => state.auth.isLoading);
+    const isLoading = useSelector((state) => state.auth.isLoading);
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
     const loginMessage = useSelector((state) => state.auth.loginMessage);
 
@@ -52,9 +52,18 @@ export const LoginForm = () => {
                 </div>
                 <div className="form-group row">
                     <div className="col-md-6 col-xl-5">
-                        <button type="submit" className="btn btn-block btn-primary">
-                            <i className="fa fa-fw fa-sign-in-alt mr-1"></i> Sign Up
-                        </button>
+                        {
+                            isLoading &&
+                            <button type="submit" className="btn btn-block btn-primary">
+                                <i className="fa fa-fw fa-sign-in-alt mr-1"></i> Signing in...
+                            </button>
+                        }
+                        {
+                            !isLoading &&
+                            <button type="submit" className="btn btn-block btn-primary" onSubmit={() => submitHandler()}>
+                                <i className="fa fa-fw fa-sign-in-alt mr-1"></i> Sign In
+                            </button>
+                        }
                     </div>
                 </div>
             </form>
