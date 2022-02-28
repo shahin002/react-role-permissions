@@ -57,9 +57,17 @@ const UserReducer = (state = initialState, action) => {
                 userData
             };
 
-        case Types.EMPTY_USER_MESSAGE:
+        case Types.EMPTY_USER_INFO:
             return {
                 ...state,
+                userData: {
+                    id: 0,
+                    name: '',
+                    email: '',
+                    password: '',
+                    roles: [],
+                    permissions: []
+                },
                 userAddMessage: null,
                 userUpdateMessage: null,
                 userDeleteMessage: null,

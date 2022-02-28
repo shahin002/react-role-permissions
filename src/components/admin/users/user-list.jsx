@@ -53,7 +53,7 @@ const UserList = () => {
                                             <button className="btn">
                                                 <i className="fa fa-trash text-danger"></i>
                                             </button>
-                                            <Link to={`/admin/users/edit/${user.id}`} className="btn ml-1">
+                                            <Link to={`/admin/users/${user.id}/edit`} className="btn ml-1">
                                                 <i className="fa fa-edit text-success"></i>
                                             </Link>
                                         </td>

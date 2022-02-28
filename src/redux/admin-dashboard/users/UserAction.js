@@ -1,6 +1,7 @@
 import * as Types from '../../Types';
 import axios from "axios";
 import {toast} from "react-toastify";
+import {EMPTY_USER_INFO} from "../../Types";
 
 export const getUsersAction = () => async (dispatch) => {
     let data = {
@@ -32,6 +33,31 @@ export const getUsersAction = () => async (dispatch) => {
     dispatch({type: Types.USER_LIST, payload: data});
 };
 
+export const getUserDetailAction = (id) => async (dispatch) => {
+    let data = {
+        status: false,
+        message: "",
+        isLoading: true,
+        data: {},
+    };
+
+    dispatch({type: Types.USER_SHOW, payload: data});
+
+    await axios
+        .get(`http://laravel07-starter.herokuapp.com/api/v1/user-info/${id}`)
+        .then((res) => {
+            const {response, meta: {status}} = res.data;
+            data.data = response.user;
+            data.message = response.message;
+            data.status = status === 200;
+        })
+        .catch((err) => {
+            data.message = err.data;
+        });
+
+    data.isLoading = false;
+    dispatch({type: Types.USER_SHOW, payload: data});
+};
 
 export const handleChangeUserInput = (name, value) => (dispatch) => {
     let data = {
@@ -113,6 +139,7 @@ export const getPermissionsAction = () => async (dispatch) => {
     dispatch({type: Types.GET_USER_PERMISSIONS, payload: data});
 };
 
-export const emptyUserMessage = () => (dispatch) => {
-    dispatch({ type: Types.EMPTY_USER_MESSAGE, payload: null });
+export const emptyUserInfo = () => (dispatch) => {
+    dispatch({type: Types.EMPTY_USER_INFO, payload: null});
 };
+

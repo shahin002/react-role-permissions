@@ -1,25 +1,29 @@
 import React, {useEffect} from 'react';
-import {Link, useNavigate} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import {useDispatch, useSelector} from "react-redux";
 import Select from "react-select";
 import {
     emptyUserInfo,
     getPermissionsAction,
-    getRolesAction, handleChangeUserInput,
+    getRolesAction,
+    getUserDetailAction,
+    handleChangeUserInput,
     storeUserAction
 } from "../../../redux/admin-dashboard/users/UserAction";
 
-const UserCreate = () => {
-    const {register, handleSubmit, formState: {errors}, getValues} = useForm();
+const UserEdit = () => {
+    const {register, handleSubmit, formState: {errors}} = useForm();
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const {id} = useParams();
 
     const {
         isLoading,
-        userAddMessage,
-        userAddStatus,
+        userUpdateMessage,
+        userUpdateStatus,
         userData,
+        userData: {name},
         all_roles,
         all_permissions
     } = useSelector((state) => state.user);
@@ -33,16 +37,18 @@ const UserCreate = () => {
     };
 
     useEffect(() => {
+        dispatch(getUserDetailAction(id));
+        console.log(userData)
         dispatch(getRolesAction());
         dispatch(getPermissionsAction());
     }, []);
 
     useEffect(() => {
-        if (userAddStatus && Boolean(userAddMessage)) {
+        if (userUpdateStatus && Boolean(userUpdateMessage)) {
             dispatch(emptyUserInfo());
             navigate("/admin/users");
         }
-    }, [userAddStatus, userAddMessage]);
+    }, [userUpdateStatus, userUpdateMessage]);
 
     return (
         <>
@@ -70,13 +76,12 @@ const UserCreate = () => {
                                                     <input className="form-control"
                                                            type="text" id="user-name"
                                                            placeholder="User Name"
-                                                           required=""
                                                            aria-required="true"
                                                            {...register('name', {
+                                                               value: name,
                                                                required: "Name field is required",
                                                            })}
                                                            onChange={(e) => handleChangeTextInput('name', e.target.value)}
-                                                           value={userData.name}
                                                            autoComplete="name"
                                                     />
                                                     <div className="text-danger text-sm">{errors.name?.message}</div>
@@ -89,16 +94,16 @@ const UserCreate = () => {
                                                 <div className="form-material form-material-primary">
                                                     <label htmlFor="user-email">Email</label>
                                                     <input className="form-control"
-                                                           type="email" id="user-email"
+                                                           type="email"
+                                                           id="user-email"
                                                            placeholder="User Email"
-                                                           required=""
                                                            aria-required="true"
                                                            {...register('email', {
+                                                               value: userData.email,
                                                                required: "Email field is required",
                                                                maxLength: 50
                                                            })}
                                                            onChange={(e) => handleChangeTextInput('email', e.target.value)}
-                                                           value={userData.email}
                                                            autoComplete="email"
                                                     />
                                                     <div className="text-danger text-sm">{errors.email?.message}</div>
@@ -112,6 +117,7 @@ const UserCreate = () => {
                                                 <div className="form-material">
                                                     <label htmlFor="roles">Select Role</label>
                                                     <Select
+                                                        defaultValue={userData.roles}
                                                         isMulti
                                                         getOptionLabel={option => option.display_name}
                                                         getOptionValue={option => option.id}
@@ -126,6 +132,7 @@ const UserCreate = () => {
                                                 <div className="form-material">
                                                     <label htmlFor="permissions">Select Extra Permissions</label>
                                                     <Select
+                                                        defaultValue={userData.extra_permissions}
                                                         isMulti
                                                         getOptionLabel={option => option.display_name}
                                                         getOptionValue={option => option.id}
@@ -133,53 +140,6 @@ const UserCreate = () => {
                                                         onChange={(e) => handleChangeTextInput('permissions', e.map(each => each.id))}
                                                     />
                                                 </div>
-                                            </div>
-                                        </div>
-
-
-                                        <div className="form-group">
-                                            <div className="col-sm-12">
-                                                <div className="form-material form-material-primary">
-                                                    <label htmlFor="user-password">Password</label>
-                                                    <input type="password"
-                                                           className="form-control form-control-alt form-control-lg"
-                                                           id="password"
-                                                           placeholder="Password"
-                                                           {...register('password', {
-                                                               required: "Password field is required",
-                                                               minLength: 6
-                                                           })}
-                                                           onChange={(e) => handleChangeTextInput('password', e.target.value)}
-                                                           value={userData.password}
-                                                           autoComplete="current-password"
-                                                    />
-                                                    <div
-                                                        className="text-danger text-sm">{errors.password?.message}</div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        <div className="form-group">
-                                            <div className="col-sm-12">
-                                                <div className="form-material form-material-primary">
-                                                    <label htmlFor="user-password_confirmation">Confirm
-                                                        Password</label>
-                                                    <input type="password"
-                                                           className="form-control form-control-alt form-control-lg"
-                                                           id="confirm_password"
-                                                           placeholder="Confirm Password"
-                                                           {...register('confirm_password', {
-                                                               required: "Please confirm your password",
-                                                               minLength: 6,
-                                                               validate: (value) => value === getValues('password') || "Passwords don't match."
-                                                           })}
-                                                           autoComplete="confirm-password"
-                                                    />
-                                                    <div
-                                                        className="text-danger text-sm">{errors.confirm_password?.message}</div>
-                                                </div>
-
                                             </div>
                                         </div>
 
@@ -210,4 +170,4 @@ const UserCreate = () => {
     );
 };
 
-export default UserCreate;
+export default UserEdit;
