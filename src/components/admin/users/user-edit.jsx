@@ -23,7 +23,6 @@ const UserEdit = () => {
         userUpdateMessage,
         userUpdateStatus,
         userData,
-        userData: {name},
         all_roles,
         all_permissions
     } = useSelector((state) => state.user);
@@ -38,17 +37,16 @@ const UserEdit = () => {
 
     useEffect(() => {
         dispatch(getUserDetailAction(id));
-        console.log(userData)
         dispatch(getRolesAction());
         dispatch(getPermissionsAction());
-    }, []);
+    }, [dispatch, id]);
 
     useEffect(() => {
         if (userUpdateStatus && Boolean(userUpdateMessage)) {
             dispatch(emptyUserInfo());
             navigate("/admin/users");
         }
-    }, [userUpdateStatus, userUpdateMessage]);
+    }, [dispatch, userUpdateStatus, userUpdateMessage, navigate]);
 
     return (
         <>
@@ -77,8 +75,8 @@ const UserEdit = () => {
                                                            type="text" id="user-name"
                                                            placeholder="User Name"
                                                            aria-required="true"
+                                                           value={userData.name}
                                                            {...register('name', {
-                                                               value: name,
                                                                required: "Name field is required",
                                                            })}
                                                            onChange={(e) => handleChangeTextInput('name', e.target.value)}
@@ -98,8 +96,8 @@ const UserEdit = () => {
                                                            id="user-email"
                                                            placeholder="User Email"
                                                            aria-required="true"
+                                                           value={userData.email}
                                                            {...register('email', {
-                                                               value: userData.email,
                                                                required: "Email field is required",
                                                                maxLength: 50
                                                            })}
@@ -117,7 +115,7 @@ const UserEdit = () => {
                                                 <div className="form-material">
                                                     <label htmlFor="roles">Select Role</label>
                                                     <Select
-                                                        defaultValue={userData.roles}
+                                                        defaultValue={userData.old_roles}
                                                         isMulti
                                                         getOptionLabel={option => option.display_name}
                                                         getOptionValue={option => option.id}

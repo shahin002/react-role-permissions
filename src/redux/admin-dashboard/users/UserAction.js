@@ -1,7 +1,7 @@
 import * as Types from '../../Types';
 import axios from "axios";
 import {toast} from "react-toastify";
-import {EMPTY_USER_INFO} from "../../Types";
+import {formatMultipleOptionsData} from "../../../services/DataFormatter";
 
 export const getUsersAction = () => async (dispatch) => {
     let data = {
@@ -19,11 +19,7 @@ export const getUsersAction = () => async (dispatch) => {
             const response = res.data;
             data.data = res.data.response.users;
             data.message = res.data.response.message;
-            if (response.meta.status === 200) {
-                data.status = true;
-            } else {
-                data.status = false;
-            }
+            data.status = response.meta.status === 200;
         })
         .catch((err) => {
             data.message = err.data;
@@ -38,7 +34,13 @@ export const getUserDetailAction = (id) => async (dispatch) => {
         status: false,
         message: "",
         isLoading: true,
-        data: {},
+        data: {
+            name: '',
+            email: '',
+            old_roles: [],
+            roles: [],
+            permissions: []
+        },
     };
 
     dispatch({type: Types.USER_SHOW, payload: data});
@@ -48,6 +50,9 @@ export const getUserDetailAction = (id) => async (dispatch) => {
         .then((res) => {
             const {response, meta: {status}} = res.data;
             data.data = response.user;
+            data.data.old_roles = response.user.roles;
+            data.data.roles = formatMultipleOptionsData(response.user.roles);
+            data.data.permissions = response.user.extra_permissions;
             data.message = response.message;
             data.status = status === 200;
         })
