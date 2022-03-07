@@ -6,6 +6,7 @@ const initialState = {
     all_roles: [],
     all_permissions: [],
     isLoading: false,
+    isFormSubmitting: false,
 
     userAddStatus: false,
     userAddMessage: "",
@@ -33,6 +34,7 @@ const UserReducer = (state = initialState, action) => {
             return {
                 ...state,
                 userList: action.payload.data,
+                isLoading: false
             };
 
         case Types.USER_CREATE:
@@ -41,12 +43,14 @@ const UserReducer = (state = initialState, action) => {
                 userAddStatus: action.payload.status,
                 userAddMessage: action.payload.message,
                 isLoading: action.payload.isLoading,
+                isFormSubmitting: action.payload.isLoading,
             };
 
         case Types.USER_SHOW:
             return {
                 ...state,
                 userData: action.payload.data,
+                isLoading: action.payload.isLoading
             };
 
         case Types.CHANGE_USER_INPUT:
