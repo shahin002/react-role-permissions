@@ -1,14 +1,7 @@
 import * as Types from '../../Types';
 import axios from "axios";
 import { toast } from "react-toastify";
-
-interface LoginData {
-    status: boolean;
-    message?: string;
-    isLoading?: boolean;
-    access_token: string | null;
-    userData: any | null;
-}
+import { LoginData } from '../../../shared/interfaces';
 
 // i might be wrong with the naming convention
 interface LogOutData {
