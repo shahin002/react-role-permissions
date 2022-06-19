@@ -5,7 +5,7 @@ import Sidebar from "./includes/Sidebar";
 import Footer from "./includes/Footer";
 import ReactTooltip from 'react-tooltip';
 
-const AdminLayout = ({children}) => {
+const AdminLayout:React.FC<{children: any }> = ({children}) => {
     return (
         <>
             <div id="page-container"

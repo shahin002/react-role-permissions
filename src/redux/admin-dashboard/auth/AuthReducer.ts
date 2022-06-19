@@ -12,8 +12,8 @@ const initialState = {
 };
 
 
-const AuthReducer = (state = initialState, action) => {
-    const newState = {...state};
+const AuthReducer = (state = initialState, action: any) => {
+    const newState = { ...state };
 
     switch (action.type) {
         case Types.AUTH_LOGIN_CHECK:
@@ -56,10 +56,8 @@ const AuthReducer = (state = initialState, action) => {
             };
 
         case Types.AUTH_GET_LOGIN_DATA:
-            const authTokenData =
-                JSON.parse(localStorage.getItem("tokenData")) || "undefined";
+            const authTokenData = JSON.parse(localStorage.getItem('tokenData') || '{}');
             const authUserData = localStorage.getItem("userData");
-
             let isLogged = state.isLoggedIn;
             if (typeof authTokenData != "undefined") {
                 isLogged = authTokenData.success;

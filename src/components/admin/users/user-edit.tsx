@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {SyntheticEvent, useEffect} from 'react';
 import {Link, useNavigate, useParams} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import {useDispatch, useSelector} from "react-redux";
@@ -25,13 +25,13 @@ const UserEdit = () => {
         userData,
         all_roles,
         all_permissions
-    } = useSelector((state) => state.user);
+    } = useSelector((state:any) => state.user);
 
     const submitHandler = () => {
         dispatch(storeUserAction(userData));
     }
 
-    const handleChangeTextInput = (name, value) => {
+    const handleChangeTextInput = (name:string, value: any) => {
         dispatch(handleChangeUserInput(name, value));
         console.log("okay")
     };
@@ -87,8 +87,8 @@ const UserEdit = () => {
                                                                    required: "Name field is required",
                                                                })}
                                                                onChange={(e) => handleChangeTextInput('name', e.target.value)}
-                                                               onSubmit={(e) => handleChangeTextInput('name', e.target.value)}
-                                                               onBlur={(e) => handleChangeTextInput('name', e.target.value)}
+                                                               onSubmit={(e: any) => handleChangeTextInput('name', e.target.value)}
+                                                               onBlur={(e:any) => handleChangeTextInput('name', e.target.value)}
                                                                autoComplete="name"
                                                         />
                                                         <div

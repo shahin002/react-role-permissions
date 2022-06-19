@@ -5,8 +5,8 @@ import {getUsersAction} from "../../../redux/admin-dashboard/users/UserAction";
 
 const UserList = () => {
     const dispatch = useDispatch();
-    const isLoading = useSelector((state) => state.user.isLoading);
-    const userList = useSelector((state) => state.user.userList);
+    const isLoading = useSelector((state: any) => state.user.isLoading);
+    const userList = useSelector((state: any) => state.user.userList);
 
     useEffect(() => {
         dispatch(getUsersAction());
@@ -42,7 +42,7 @@ const UserList = () => {
                             </thead>
                             <tbody>
                             {
-                                userList.map((user, index) => (
+                                userList.map((user: any, index:number) => (
                                     <tr key={index}>
                                         <td>{index + 1}</td>
                                         <td>{user.name}</td>

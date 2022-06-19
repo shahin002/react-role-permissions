@@ -5,9 +5,9 @@ import {useDispatch, useSelector} from "react-redux";
 
 const Header = () => {
     const dispatch = useDispatch();
-    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-    const submitLogout = useSelector((state) => state.auth.submitLogout);
-    const user = useSelector((state) => state.auth.authUserData);
+    const isLoggedIn = useSelector((state:any) => state.auth.isLoggedIn);
+    const submitLogout = useSelector((state:any) => state.auth.submitLogout);
+    const user = useSelector((state:any) => state.auth.authUserData);
     const logout = () => {
         dispatch(logoutAuthenticatedUser());
     }

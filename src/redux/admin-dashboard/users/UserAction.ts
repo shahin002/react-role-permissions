@@ -1,9 +1,27 @@
 import * as Types from '../../Types';
 import axios from "axios";
-import {toast} from "react-toastify";
-import {formatMultipleOptionsData} from "../../../services/DataFormatter";
+import { toast } from "react-toastify";
+import { formatMultipleOptionsData } from "../../../services/DataFormatter";
 
-export const getUsersAction = () => async (dispatch) => {
+
+
+interface InsideData {
+    name: string,
+    email: string,
+    old_roles: Array<any>,
+    roles: any[] | never[],
+    permissions: Array<string>[]
+}
+
+interface Data {
+    status: boolean;
+    message: string;
+    isLoading: boolean,
+    data: InsideData;
+}
+
+
+export const getUsersAction = () => async (dispatch: any) => {
     let data = {
         status: false,
         message: "",
@@ -11,7 +29,7 @@ export const getUsersAction = () => async (dispatch) => {
         data: [],
     };
 
-    dispatch({type: Types.USER_LIST, payload: data});
+    dispatch({ type: Types.USER_LIST, payload: data });
 
     await axios
         .get(`http://laravel07-starter.herokuapp.com/api/v1/user-list`)
@@ -26,11 +44,11 @@ export const getUsersAction = () => async (dispatch) => {
         });
 
     data.isLoading = false;
-    dispatch({type: Types.USER_LIST, payload: data});
+    dispatch({ type: Types.USER_LIST, payload: data });
 };
 
-export const getUserDetailAction = (id) => async (dispatch) => {
-    let data = {
+export const getUserDetailAction = (id: any) => async (dispatch: any) => {
+    let data: Data = {
         status: false,
         message: "",
         isLoading: true,
@@ -40,15 +58,15 @@ export const getUserDetailAction = (id) => async (dispatch) => {
             old_roles: [],
             roles: [],
             permissions: []
-        },
+        }
     };
 
-    dispatch({type: Types.USER_SHOW, payload: data});
+    dispatch({ type: Types.USER_SHOW, payload: data });
 
     await axios
         .get(`http://laravel07-starter.herokuapp.com/api/v1/user-info/${id}`)
         .then((res) => {
-            const {response, meta: {status}} = res.data;
+            const { response, meta: { status } } = res.data;
             data.data = response.user;
             data.data.old_roles = response.user.roles;
             data.data.roles = formatMultipleOptionsData(response.user.roles);
@@ -61,25 +79,25 @@ export const getUserDetailAction = (id) => async (dispatch) => {
         });
 
     data.isLoading = false;
-    dispatch({type: Types.USER_SHOW, payload: data});
+    dispatch({ type: Types.USER_SHOW, payload: data });
 };
 
-export const handleChangeUserInput = (name, value) => (dispatch) => {
+export const handleChangeUserInput = (name: string, value:any) => (dispatch:any) => {
     let data = {
         name: name,
         value: value,
     }
-    dispatch({type: Types.CHANGE_USER_INPUT, payload: data});
+    dispatch({ type: Types.CHANGE_USER_INPUT, payload: data });
 };
 
-export const storeUserAction = (userData) => async (dispatch) => {
+export const storeUserAction = (userData: any) => async (dispatch: any) => {
     let data = {
         status: false,
         message: "",
         isLoading: true,
     };
 
-    dispatch({type: Types.USER_CREATE, payload: data});
+    dispatch({ type: Types.USER_CREATE, payload: data });
 
     await axios
         .post(
@@ -87,7 +105,7 @@ export const storeUserAction = (userData) => async (dispatch) => {
             userData
         )
         .then(async (res) => {
-            const {response, meta} = res.data;
+            const { response, meta } = res.data;
             data.message = response.message;
             if (meta.status === 200) {
                 data.status = true;
@@ -103,15 +121,15 @@ export const storeUserAction = (userData) => async (dispatch) => {
         });
 
     data.isLoading = false;
-    dispatch({type: Types.USER_CREATE, payload: data});
+    dispatch({ type: Types.USER_CREATE, payload: data });
 };
 
-export const getRolesAction = () => async (dispatch) => {
+export const getRolesAction = () => async (dispatch: any) => {
     let data = {
         isLoading: true,
         all_roles: []
     };
-    dispatch({type: Types.GET_USER_ROLES, payload: data});
+    dispatch({ type: Types.GET_USER_ROLES, payload: data });
     await axios
         .get(`http://laravel07-starter.herokuapp.com/api/v1/roles-list`)
         .then(async (res) => {
@@ -122,15 +140,15 @@ export const getRolesAction = () => async (dispatch) => {
             console.log(err.data);
         });
     data.isLoading = false;
-    dispatch({type: Types.GET_USER_ROLES, payload: data});
+    dispatch({ type: Types.GET_USER_ROLES, payload: data });
 };
 
-export const getPermissionsAction = () => async (dispatch) => {
+export const getPermissionsAction = () => async (dispatch: any) => {
     let data = {
         isLoading: true,
         all_permissions: []
     };
-    dispatch({type: Types.GET_USER_PERMISSIONS, payload: data});
+    dispatch({ type: Types.GET_USER_PERMISSIONS, payload: data });
     await axios
         .get(`http://laravel07-starter.herokuapp.com/api/v1/permissions-list`)
         .then(async (res) => {
@@ -141,10 +159,10 @@ export const getPermissionsAction = () => async (dispatch) => {
             console.log(err.data);
         });
     data.isLoading = false;
-    dispatch({type: Types.GET_USER_PERMISSIONS, payload: data});
+    dispatch({ type: Types.GET_USER_PERMISSIONS, payload: data });
 };
 
-export const emptyUserInfo = () => (dispatch) => {
-    dispatch({type: Types.EMPTY_USER_INFO, payload: null});
+export const emptyUserInfo = () => (dispatch: any) => {
+    dispatch({ type: Types.EMPTY_USER_INFO, payload: null });
 };
 

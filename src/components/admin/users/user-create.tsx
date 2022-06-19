@@ -22,13 +22,13 @@ const UserCreate = () => {
         userData,
         all_roles,
         all_permissions
-    } = useSelector((state) => state.user);
+    } = useSelector((state: any) => state.user);
 
     const submitHandler = () => {
         dispatch(storeUserAction(userData));
     }
 
-    const handleChangeTextInput = (name, value) => {
+    const handleChangeTextInput = (name: string, value: any) => {
         dispatch(handleChangeUserInput(name, value));
     };
 
@@ -70,7 +70,7 @@ const UserCreate = () => {
                                                     <input className="form-control"
                                                            type="text" id="user-name"
                                                            placeholder="User Name"
-                                                           required=""
+                                                           required
                                                            aria-required="true"
                                                            {...register('name', {
                                                                required: "Name field is required",
@@ -91,7 +91,7 @@ const UserCreate = () => {
                                                     <input className="form-control"
                                                            type="email" id="user-email"
                                                            placeholder="User Email"
-                                                           required=""
+                                                           required
                                                            aria-required="true"
                                                            {...register('email', {
                                                                required: "Email field is required",
@@ -113,8 +113,8 @@ const UserCreate = () => {
                                                     <label htmlFor="roles">Select Role</label>
                                                     <Select
                                                         isMulti
-                                                        getOptionLabel={option => option.display_name}
-                                                        getOptionValue={option => option.id}
+                                                        getOptionLabel={(option:any) => option.display_name}
+                                                        getOptionValue={(option:any) => option.id}
                                                         options={all_roles}
                                                         onChange={(e) => handleChangeTextInput('roles', e.map(each => each.id))}
                                                     />
@@ -127,8 +127,8 @@ const UserCreate = () => {
                                                     <label htmlFor="permissions">Select Extra Permissions</label>
                                                     <Select
                                                         isMulti
-                                                        getOptionLabel={option => option.display_name}
-                                                        getOptionValue={option => option.id}
+                                                        getOptionLabel={(option: any) => option.display_name}
+                                                        getOptionValue={(option: any) => option.id}
                                                         options={all_permissions}
                                                         onChange={(e) => handleChangeTextInput('permissions', e.map(each => each.id))}
                                                     />
