@@ -1,7 +1,27 @@
 import * as Types from "../../Types";
 
+interface InitialState {
+    userList: Array<string>,
+    all_roles: Array<any>,
+    all_permissions: Array<any>,
+    isLoading: boolean,
+    isFormSubmitting: boolean,
+
+    userAddStatus: boolean,
+    userAddMessage: string,
+
+    userUpdateStatus: boolean,
+    userUpdateMessage: string,
+
+    userDeleteStatus: boolean,
+    userDeleteMessage: string,
+
+    userData: any,
+
+}
+
 // Initial state
-const initialState = {
+const initialState: InitialState = {
     userList: [],
     all_roles: [],
     all_permissions: [],
@@ -26,8 +46,8 @@ const initialState = {
     }
 };
 
-const UserReducer = (state = initialState, action) => {
-    const newState = {...state};
+const UserReducer = (state = initialState, action: any) => {
+    const newState = { ...state };
 
     switch (action.type) {
         case Types.USER_LIST:
@@ -54,7 +74,7 @@ const UserReducer = (state = initialState, action) => {
             };
 
         case Types.CHANGE_USER_INPUT:
-            const userData = {...state.userData};
+            const userData = { ...state.userData };
             userData[action.payload.name] = action.payload.value;
             return {
                 ...state,
@@ -79,7 +99,7 @@ const UserReducer = (state = initialState, action) => {
 
         case Types.USER_DELETE:
             const deletedID = action.payload.data;
-            const updatedUserList = state.userList.filter((x) => x.id !== deletedID);
+            const updatedUserList = state.userList.filter((x: any) => x.id !== deletedID);
             return {
                 ...state,
                 userList: updatedUserList,

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import "./assets/Admin.css";
 
-const AuthLayout = ({children}) => {
+const AuthLayout:React.FC<{children: any }> = ({children}) => {
     return (
         <>
             <div id="page-container">
