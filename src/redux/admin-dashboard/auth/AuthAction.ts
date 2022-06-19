@@ -1,14 +1,7 @@
 import * as Types from '../../Types';
 import axios from "axios";
 import { toast } from "react-toastify";
-import { LoginData } from '../../../shared/interfaces';
-
-// i might be wrong with the naming convention
-interface LogOutData {
-    status: boolean;
-    tokenData: null | string;
-    userData: null | any;
-}
+import { LoginData, LogOutData } from '../../../shared/interfaces';
 
 
 export const loginSubmitAction = (postData: any) => async (dispatch: any) => {

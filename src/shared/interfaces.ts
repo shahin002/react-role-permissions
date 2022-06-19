@@ -8,3 +8,10 @@ export interface LoginData {
     userData: any | null;
 }
 
+// it might be wrong with the naming convention
+export interface LogOutData {
+    status: boolean;
+    tokenData: null | string;
+    userData: null | any;
+}
+
